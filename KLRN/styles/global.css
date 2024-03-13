@@ -1,0 +1,512 @@
+﻿@charset "UTF-8";
+
+/* global styles for master pages */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100.1%;
+}
+body {   
+  background-color: #fefefd;
+  background-color: #f9f9f8;
+  background-color: #f7f9f9;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #747474;
+  line-height: 140%;
+}
+body.mobile {
+  background-color: #f7f9f9;
+  background-color: #fff;
+}
+#page_wrapper {
+  min-height: 100%;
+}
+#push_footer_wrapper {
+  min-height: 100%;
+  margin: 0 auto -71px; /* height of #footer plus its margin-top */
+}
+#push_footer {
+  height: 71px; /* height of #footer plus its margin-top */
+}
+.container {
+  max-width: 800px; 
+  margin: 0 auto;
+}
+#header {
+  background: #2B5998 url('https://klrn.secureallegiance.com/klrn/WebModule/KLRN/images/global/KLRN_banner_background.png') no-repeat center center;
+  height: 80px;
+  background-size: auto 75px;
+  border-bottom-width: 3px; 
+	-webkit-box-shadow: 0px 1px 5px rgba(0,0,0, 0.28);
+	-moz-box-shadow: 0px 1px 5px rgba(0,0,0, 0.28);	            
+  box-shadow: 0px 1px 5px rgba(0,0,0, 0.28); 
+}
+.mobile #header {
+  height: 76px;
+}
+#klrn_logo {
+  margin-top: 6px;
+  border: none;
+}
+.mobile #klrn_logo, .mobile #footer .container {
+  padding-left: 15px;
+  padding-right: 15px;
+} 
+#form_wrapper {
+  clear: both;
+  margin-top: 25px;
+  padding: 0 15px 15px;
+  display: inline-block;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  -webkit-box-shadow: 0px 0px 5px #ddd;
+  -moz-box-shadow: 0px 0px 5px #ddd;
+  box-shadow: 0px 0px 5px #ddd;
+}
+.datavalidation #form_wrapper {
+  padding-top: .4em; 
+}
+.confirmation #form_wrapper {
+  padding-top: .8em; 
+}
+#footer {
+  margin-top: 30px;
+  font-size: 13px;
+  line-height: 21px;
+  color: #fff;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: #2b5898 !important;
+  background: linear-gradient(#5278AB, #2B5998);
+  padding: 10px 0;
+}
+.mobile #footer {
+  margin-top: 15px;
+}
+
+/* styles to override events and pledge form defaults ================================================================*/
+
+.HEADERSTABLE, .MAINTABLE, .ALLEGELEMENTS, .ALLEGSECTIONS, .ALLEGQUESTIONS {
+  background: none !important;
+  font-family: Verdana,Arial,sans-serif !important;
+  font-size: 14px !important;
+  color: #747474 !important;
+}
+.HEADERSTABLE h3, .MAINTABLE h3, .ALLEGELEMENTS h3, .ALLEGSECTIONS h3, .ALLEGQUESTIONS h3 {
+  font-size: 14px !important;
+}
+.ALLEGQUESTIONS {
+  width: 100% !important;
+  margin-bottom: 0.3em;
+}
+.ALLEGQUESTIONS strong, .ALLEGQUESTIONS b {
+  font-weight: normal;
+}
+.mobile .HEADERSTABLE, .mobile .MAINTABLE, .mobile .ALLEGELEMENTS, .mobile .ALLEGSECTIONS, .mobile .ALLEGQUESTIONS {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  font-size: 12px !important;
+  color: #666 !important;
+}
+.HEADERSTABLE {
+	margin: 0.5em 0;
+  width: 100%;
+}
+.ALLEGHEADERS {
+  line-height: normal;
+  /*padding: 3px 0 5px 9px;*/
+	font-size: 14px !important;		
+  background: #2B5998 !important;
+  color: #fff;
+  font-style: normal;
+  font-weight: bold;
+  text-align: left;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ALLEGHEADERS h2, .confirmation .ALLEGHEADERS { 
+  font-size: 15px !important;
+  padding: 6px 10px 8px;
+  margin-top: 15px;
+}
+.mobile .ALLEGHEADERS h2, .mobile.confirmation .ALLEGHEADERS { 
+  font-size: 14px !important;
+  padding: 6px 10px 8px;
+}
+.datavalidation .ALLEGHEADERS h2 { 
+  margin-bottom: -3px;
+}
+.ALLEGSECTIONS h2 {
+  font-size: 14px;
+  margin: 15px 0;
+}
+.MSTR_CLEARL .ALLEGSECTIONS h2, .MSTR1 .ALLEGSECTIONS h2 {
+  font-size: 22px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin-top: 25px;
+}
+.ALLEGELEMENTS {
+  margin-bottom: 1em;
+}
+.IN_CLEAR, .IN_CLEAR .INNER_RIGHT25 {
+  margin-bottom: 0.7em;
+}
+.INNER_LEFT20, .INNER_LEFT10 {
+  font-weight: bold;
+}
+
+/* styles to override events, pledge and OPI form defaults ================================================================*/
+
+input[type="button"],
+input[type="submit"],
+button,
+.button {
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #2B5998;
+  text-decoration: none;
+  padding: 0.5em 1em 0.6em;
+  background: linear-gradient(#628DC5, #2B5998);
+  color: #FFF;
+  border-radius: 4px;
+  margin-right: 0.4em;
+  font-size: 16px;
+}
+.ALLEGELEMENTS td input[type="button"] {
+  margin: 0.15em 0.4em 0.15em 0;	
+}
+.g-recaptcha {
+  margin-bottom: 0.7em;
+}
+input[type="submit"] {
+  margin-top: 0.4em;
+}
+.datavalidation input[type="submit"] {
+  margin: 0 !important;
+}
+.datavalidation #ctl00_AllegMain_btnExit {
+  margin-bottom: 0 !important;
+}
+.confirmation #ctl00_AllegMain_btnExit {
+  margin: 0  !important;
+}
+.mobile input[type="submit"],
+.pledge input[type="submit"]#ctl00_AllegMain_btnReturn {
+  margin-top: 0;
+}
+input[type="button"]:hover,
+input[type="submit"]:hover,
+button:hover,
+.button:hover {
+  text-decoration: underline;
+}
+input[type="button"]:focus,
+input[type="submit"]:focus,
+button:focus,
+.button:focus {
+  outline: none;
+}
+input,
+textarea,
+select {
+  padding: 8px;
+  border: 1px solid #DDD;
+  background: #FFF;
+  resize: none;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+textarea:focus
+select:focus {
+    border: 1px solid #2B5998;
+}
+textarea {
+    height: 175px;
+}
+#ctl00_AllegMain_username,
+#ctl00_AllegMain_newPassword,
+#ctl00_AllegMain_confirmPassword,
+#ctl00_AllegMain_submitButton {
+  margin-bottom: 0.8em;
+}
+
+/* styles to clean up allegince displays ================================================================*/
+
+#ctl00_AllegMain_DonationSummary, #ctl00_AllegMain_DonationSummaryShip1 { 
+  margin-top: 15px;
+}
+#aspnetForm {
+  margin-top: 0;
+}
+.mobile.confirmation #aspnetForm {
+  margin-top: 10px;
+}
+#ctl00_AllegMain_PREMIUMLIST {
+  padding: .2em 0 .5em;
+  padding: 0;
+  width: auto !important;
+  margin-bottom: -0.6em;
+}
+#ctl00_AllegMain_PREMIUMDROPDOWN {
+  margin-bottom: 0;
+}
+#PremiumCart {
+  margin-top: 1.1em;
+}
+.events #ctl00_AllegMain_PREMIUMLIST td a {
+  padding-left: .3em;
+}
+#premTBODY tr:first-child td:nth-child(3),
+#premTBODY tr:nth-child(2) td:nth-child(3) { 
+  padding-left: 0.35em;
+  padding-right: 0.65em;
+}
+.mobile #premTBODY tr:first-child td:nth-child(3),
+.mobile #premTBODY tr:nth-child(2) td:nth-child(3) { 
+  padding: 0 0.5em;
+}
+#ctl00_AllegMain_wrkCity, 
+#ctl00_AllegMain_Ship1wrkCity {
+  margin-bottom: 1em;
+}
+#ctl00_AllegMain_wrkState,
+#ctl00_AllegMain_Ship1wrkState {
+  margin-bottom: 1.1em;
+}
+.ALLEGMOBILEWIDTH {
+  box-sizing: border-box;
+}
+#ctl00_AllegMain_AGREE {
+  vertical-align: top;
+}
+#ctl00_AllegMain_ALLEGCLAGREE label {
+  display: inline-block;
+  width: 90%;
+}
+.datavalidation .ALLEGELEMENTS div:nth-child(even), 
+.confirmation .ALLEGELEMENTS div:nth-child(even),
+.mobile.datavalidation .MAINTABLE .IN_FULL div:nth-child(even), 
+.mobile.confirmation .MAINTABLE .IN_FULL div:nth-child(even)  
+{
+     margin-bottom: 1em;
+} 
+/*
+.mobile .ALLEGSECTIONS, 
+.mobile .ALLEGELEMENTS, 
+.mobile #ctl00_AllegMain_PREMIUMLIST, 
+.mobile .g-recaptcha,
+.mobile.datavalidation .MAINTABLE .IN_FULL,
+.mobile.confirmation .MAINTABLE .IN_FULL,
+.mobile.confirmation .MSTR_CLEARL p {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.mobile #ctl00_AllegMain_generateQuestionFAVPRG, 
+.mobile #ctl00_AllegMain_generateQuestionLNGRNG,
+.mobile #ctl00_AllegMain_generateQuestionCCSEC,
+.mobile #ctl00_AllegMain_generateQuestionCOMMENT {
+  padding-right: 20px;
+}
+*/
+.mobile .container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.mobile #info.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+#ctl00_AllegMain_generateQuestionAGREE { 
+  padding-left: 4px; 
+}
+
+/* global styles for events ================================================================*/
+
+.events .container { 
+  max-width: 785px; 
+}
+.events .ALLEGHEADERS, .events .MAINTABLE { 
+  max-width: 785px;
+}
+.events #info img {
+  float: left;
+}
+.events #info .container {
+  display: none;
+}
+.events .details {
+  float: left;
+  text-align: left; 
+  margin-left: 30px; 
+  font: 18px/1.35 Verdana, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+.events .details span { 
+  font-size: 15px; 
+}
+.mobile.events .event_logo {
+  max-width: 300px;
+  padding: 20px 1px 5px; 
+  display: none;
+}
+
+/* global styles for pledge ================================================================*/
+
+.pledge .container {
+  max-width: 680px;
+}
+.pledge.donate .container {
+  max-width: 980px;
+}
+.pledge .ALLEGHEADERS, .pledge .MAINTABLE { 
+  max-width: 680px;
+}
+.mobile.pledge .ALLEGHEADERS, .mobile.pledge .MAINTABLE { 
+  max-width: 100%;
+}
+.pledge #aspnetForm {
+  float: left;
+}
+.mobile.pledge #aspnetForm {
+  float: none;
+}
+.pledge #info h1 {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 22px;
+  margin: 35px 0 5px;
+}
+.pledge #info, .pledge #ctl00_sidebar {
+  display: none;
+}
+.pledge.donate #ctl00_sidebar {
+  display: inline;
+}
+.pledge.donate #info {
+  display: block;
+}
+
+/* operator page styles ================================================================*/
+
+.signon #ctl00_AllegMain_MainPanel span strong {
+  font-size: 15px;
+}
+.opracd.donate #info h1, .oprtxt.donate #info h1 {
+  margin-bottom: 1px;
+}
+.opracd.donate .intro_paragraph, .oprtxt.donate .intro_paragraph {
+  display: none !important;
+}
+.opracd.donate div .MAINTABLE .ALLEGHEADERS, 
+.oprtxt.donate div .MAINTABLE .ALLEGHEADERS {
+  font-size: 15px !important;
+  padding: 6px 10px 8px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+.opracd.donate div.MSTR_CLEARL .MAINTABLE .ALLEGHEADERS,
+.opracd.donate div .MAINTABLE span .ALLEGHEADERS,
+.oprtxt.donate div.MSTR_CLEARL .MAINTABLE .ALLEGHEADERS,
+.oprtxt.donate div .MAINTABLE span .ALLEGHEADERS {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* info styles for pledge ================================================================*/
+
+.pledge #info .intro_paragraph {
+  font-size: 16px; 
+  line-height: 140%;
+  color: #666;
+  margin-bottom: 2px;
+  display: none;
+  }
+.mobile.pledge #info .intro_paragraph { 
+  font-size: 14px;
+  padding: 0 2px;
+}
+
+/* note spacing styles for pledge ================================================================*/
+
+#ctl00_sidebar .note.gift {
+  display: none;
+}
+.onetime #ctl00_sidebar .note.gift.onetime {
+  display: inline-block;
+}
+.sustainer #ctl00_sidebar .note.gift.sustainer {
+  display: inline-block;
+}
+
+/* global/default */
+.note.taxbreak {
+  margin-top: 15px;
+}
+.note.nevershare { 
+  margin-top: 230px; 
+}
+.note.feedback {
+  margin-top: 230px;
+}
+
+/* custom */
+.renewal .note.taxbreak {
+  margin-top: 15px;
+}
+.renewal .note.nevershare { 
+  margin-top: 240px; 
+}
+.renewal .note.feedback {
+  margin-top: 275px;
+}
+
+.news .note.taxbreak {
+  margin-top: 15px;
+}
+.news .note.nevershare { 
+  margin-top: 190px; 
+}
+.news .note.feedback {
+  margin-top: 200px;
+}
+
+/* passport */
+.passport .note.taxbreak {
+  margin-top: 15px;
+}
+.passport .note.nevershare { 
+  margin-top: 200px; 
+}
+.passport .note.feedback {
+  margin-top: 210px;
+}
+
+/* onetime */
+.onetime .note.gift {
+  margin-top: 15px;
+}
+.onetime .note.taxbreak {
+  margin-top: 175px;
+}
+.onetime .note.nevershare { 
+  margin-top: 225px; 
+}
+.onetime .note.feedback {
+  margin-top: 235px;
+}
+
+/* sustainer */
+.sustainer .note.taxbreak {
+  margin-top: 15px;
+}
+.sustainer .note.nevershare { 
+  margin-top: 195px; 
+}
+.sustainer .note.gift {
+  margin-top: 160px;
+}
+.sustainer .note.feedback {
+  margin-top: 170px;
+}

@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" %>
+
+<%@ Register Src="~/KLRN/includes/header.ascx" TagPrefix="uc1" TagName="header" %>
+<%@ Register Src="~/KLRN/includes/footer.ascx" TagPrefix="uc1" TagName="footer" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+  protected void Page_Load(object sender, EventArgs e)
+  {
+    masterBody.Attributes.Add("class", "home leftContent mobile pledge " + Request.QueryString["P"].ToLower() + " " + Request.Path.Split('/')[3].Split('.')[0].ToLower());
+  }
+</script>
+
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+  <title>KLRN secure mobile donation form</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link href="../KLRN/styles/global.css" rel="stylesheet" />  
+    
+  <style type="text/css">
+  <!--
+  
+  .container { opacity: 0; }
+  #header .container { opacity: 1; }  
+  
+  -->
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script>
+    //note that this tag's dataLayer is renamed as klrnDataLayer, in three places 
+    window.klrnDataLayer = window.dataLayer || [];
+    function gtag() { klrnDataLayer.push(arguments); }
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'klrnDataLayer', 'GTM-MLCPK8');
+  </script>
+  <!-- End Google Tag Manager -->
+
+</head>
+<body id="masterBody" runat="server">
+
+  <div id="header">
+    <uc1:header runat="server" ID="header1" />
+    <asp:ContentPlaceHolder ID="AllegHead" runat="server">
+    </asp:ContentPlaceHolder>
+  </div><!-- #header -->
+
+  <div id="content" class="container">
+    <div id="info" class="container">
+      <p class="intro_paragraph"></p>
+    </div><!-- #info -->
+    <form id="form1" runat="server" >
+      <asp:ContentPlaceHolder ID="AllegMain" runat="server">
+      </asp:ContentPlaceHolder>
+    </form>
+  </div>
+
+  <uc1:footer runat="server" ID="footer" />
+
+  <script src='<%= ResolveUrl("~/KLRN/scripts/global.js") %>'></script>
+  <script src='<%= ResolveUrl("~/KLRN/scripts/pledge.js") %>'></script>
+
+  <script type="text/javascript">
+    //<![CDATA[
+
+    //fade in .container elements after header, to smooth out jerky loading
+    (function() {
+      var elems = document.querySelectorAll('.container'), i;
+      var fadeIn = function(elem, fadeTime, callback) {
+        var opacity = 0;
+        var timer;
+        var fade = function () {
+          opacity = opacity + 4;
+          elem.style.filter = "alpha(opacity=" + opacity.toString() + ")";
+          elem.style.opacity = opacity / 100;
+          if (opacity >= 100) {
+            clearInterval(timer);
+            if (callback) callback();
+          }
+        };
+        timer = setInterval(fade, fadeTime);
+      }
+      if (elems.length > 1) {
+        for (i=1; i<elems.length; i++) {
+          fadeIn(elems[i], 1);
+        }
+      }
+    }());
+    
+    //]]>
+  </script>
+
+</body>
+</html>
+

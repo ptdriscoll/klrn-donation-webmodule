@@ -1,0 +1,221 @@
+﻿<%@ Master Language="C#" %>
+
+<%@ Register Src="~/KLRN/includes/header.ascx" TagPrefix="uc1" TagName="header" %>
+<%@ Register Src="~/KLRN/includes/footer.ascx" TagPrefix="uc1" TagName="footer" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+  protected void Page_Load(object sender, EventArgs e)
+  {
+    masterBody.Attributes.Add("class", "events " + Request.QueryString["P"].ToLower() + " " + Request.Path.Split('/')[3].Split('.')[0].ToLower());
+  }
+</script>
+
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+  <title>KLRN secure ticket form</title>
+
+  <asp:ContentPlaceHolder id="AllegHead" runat="server">       
+  </asp:ContentPlaceHolder> 
+        
+  <link href="../KLRN/styles/global.css" rel="stylesheet" />
+
+  <style type="text/css">
+  <!--
+  
+  .container { opacity: 0; }
+  #header .container { opacity: 1; }
+
+  /* each of these selectors uses URL paramter's page ID as page classes in two spots */
+  .chef #info .container.chef_content,
+  .givingtue #info .container.givingtue_content
+  {
+    display: block;
+  }
+  
+  .givingtue .event_logo {
+    width: 250px;
+    margin-top: 20px;
+    margin-right: 15px;
+    margin-bottom: -15px;
+  }
+  .givingtue .details {
+    max-width: 90%;
+    float: none;
+    padding-top: 51px;
+    text-align: center;    
+  }
+  .givingtue .details p { 
+    margin-bottom: 0.5em;
+    font-size: 25px; 
+    line-height: 1.35em;
+    color: #77353E;    
+  }
+  .givingtue .details p.small { 
+    font-size: 15px;
+    line-height: 1.35em; 
+  }
+  .givingtue #ctl00_AllegMain_ALLEGCL_TSHIRT2 div:first-child { margin-bottom: 1em; }
+  .givingtue .ALLEGHEADERS {
+    background: #77353E !important;
+  }
+  
+  .chef #info {
+    padding-top: 40px;
+  }
+  .chef .event_logo {
+    width: 35%;
+    margin-left: 2px; /* pati */
+    margin-left: 5px; /* lidia */
+    opacity: .9; /* pati */
+    opacity: 1; /* lidia */
+  }
+  .chef .details {
+    color: #B1411B;
+    margin-top: -16px; /* pati */
+    margin-top: 17px; /* lidia */
+    margin-left: 24px; /* pati */
+    margin-left: 31px; /* lidia */
+    font-size: 17px; /* pati */
+  }
+  .chef #form_wrapper {
+    margin-top: 15px; /* lidia */
+  }
+  .chef .ALLEGHEADERS {
+    background: #77353E !important;
+  }
+
+  -->
+  </style>
+
+  <!--[if IE]>
+  <style type="text/css">
+
+  </style>
+  <![endif]-->
+
+  <!-- Google Tag Manager -->
+  <script>
+      //note that this tag's dataLayer is renamed as klrnDataLayer, in three places 
+      window.klrnDataLayer = window.dataLayer || [];
+      function gtag() { klrnDataLayer.push(arguments); }
+      (function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'klrnDataLayer', 'GTM-MLCPK8');
+  </script>
+  <!-- End Google Tag Manager -->
+
+</head>
+<body id="masterBody" class="events" runat="server"> 
+
+  <div id="push_footer_wrapper">
+
+    <!-- HEADER ================================================================-->
+    <div id="header">
+      <uc1:header runat="server" ID="header" />
+    </div><!-- #header --> 
+
+    <!-- EVENT LOGO AND INFO ================================================================
+    ==== for each container, concat URL paramter's page ID with _content and add as second classname, right after container
+    ==== example: <div class="container chef_content">
+    ==== then in on-page CSS, add .chef #info .container.chef_content as selector for { display: block } declaration      
+    =========================================================================================-->
+    <div id="info">
+    
+      <!-- giving tuesday content ================================================================-->
+      <div class="container givingtue_content">
+        <img class="event_logo" src="https://pbs.klrn.org/support/images/giving-tuesday.png"></img>
+  
+        <div class="details">
+          <p class="lead">Thank you for visiting our<br>KLRN #GivingTuesday page</p>
+          <p class="small">Your support creates a world of lifelong learning on-air, online and in the our community</p>
+        </div><!-- .details -->
+      </div><!-- .container -->	    
+	
+      <!-- chef content ================================================================-->
+      <div class="container chef_content">
+        <img class="event_logo" src="https://pbs.klrn.org/chef/images/lidia_logo_2019.png"></img>
+  
+        <div class="details">
+          <p>
+		    Sunday Dinner<br>
+            <span>6 p.m. March 3</span><br>
+			<br>
+			
+            Monday Lunch<br>
+            <span>11 a.m. March 4</span><br>      
+
+            <!--
+            <br>
+            <span>Benefiting quality programming on KLRN</span>
+            -->
+
+          </p>
+        </div><!-- .details -->
+      </div><!-- .container -->
+
+    </div><!-- #info --> 
+    <!-- end event info and log ================================================================
+    ============================================================================================-->
+
+
+    <!-- FORM ================================================================-->
+    <div class="container">
+      <div id="form_wrapper"> 
+        <form id="form1" runat="server">
+          <asp:ContentPlaceHolder id="AllegMain" runat="server">
+          </asp:ContentPlaceHolder>  
+        </form>
+      </div><!-- #form_wrapper --> 
+    </div><!-- .container -->
+    
+    <div id="push_footer"></div> 
+  </div><!-- #push_footer_wrapper -->
+
+  <!-- FOOTER ================================================================-->
+  <uc1:footer runat="server" ID="footer" />
+
+<!-- SCRIPTS ================================================================-->
+  <script src='<%= ResolveUrl("~/KLRN/scripts/global.js") %>'></script>
+  <script src='<%= ResolveUrl("~/KLRN/scripts/events.js?v=1") %>'></script>
+
+  <script type="text/javascript">
+    //<![CDATA[
+    
+    //fade in .container elements after header, to smooth out jerky loading
+    (function() {
+      var elems = document.querySelectorAll('.container'), i;
+      var fadeIn = function(elem, fadeTime, callback) {
+        var opacity = 0;
+        var timer;
+        var fade = function () {
+          opacity = opacity + 4;
+          elem.style.filter = "alpha(opacity=" + opacity.toString() + ")";
+          elem.style.opacity = opacity / 100;
+          if (opacity >= 100) {
+            clearInterval(timer);
+            if (callback) callback();
+          }
+        };
+        timer = setInterval(fade, fadeTime);
+      }
+      if (elems.length > 1) {
+        for (i=1; i<elems.length; i++) {
+          fadeIn(elems[i], 1);
+        }
+      }
+    }());     
+
+  //]]>
+  </script>
+
+</body>
+</html>
