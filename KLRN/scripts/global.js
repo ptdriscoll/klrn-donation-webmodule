@@ -256,6 +256,13 @@ klrn.productCategory = klrn.form ? klrn.form.toUpperCase() : 'Not set';
       },
     ],
   });
+  
+  //google ads: now save purchase data as a separate event for Google Ads 
+  gtag('event', 'conversion_event_purchase', {
+    transaction_id: klrn.id,
+    value: price,
+    currency: 'USD',
+  });  
 
   //now push data to Facebook Pixel
   let tries = 0;
